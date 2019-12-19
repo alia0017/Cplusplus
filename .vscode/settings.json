@@ -4,5 +4,6 @@
         "iostream": "cpp",
         "vector": "cpp",
         "ios": "cpp"
-    }
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Enabled"
 }
