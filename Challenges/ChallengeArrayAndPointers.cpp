@@ -10,16 +10,16 @@ void print(const int *const array, size_t size){
 }
 
 //Needs to point to a pointer of an integer at the end (on the heap)
-int *apply_all(const int *const array1, size_t size1, const int *const array2, size_t size2){
-    //Creating a viarable pointer
+int *apply_all(const int *const arr1, size_t size1, const int *const arr2, size_t size2){
+    //Initializing a viarable pointer
     int *new_array {};
-
+    //Creating it on the Heap
     new_array = new int[size1 * size2];
 
     int position {0};
     for (size_t i{0}; i<size2; ++i){
-        for(size_t j{0}; j< size1; ++i){
-            new_array[position] = array1[j] * array2[i];
+        for(size_t j{0}; j<size1; ++j){
+            new_array[position] = arr1[j] * arr2[i];
             ++position;
         }
     }
@@ -39,8 +39,10 @@ int main(){
     cout << "Array 2: ";
     print(array2, array2_size);
 
-    int *results = apply_all(array1, array1_size, array2, array2_size);
-    constexpr size_t results_size {array1_size * array2_size};
+    //*results will return the # of integers from the apply_all function
+    int *results = apply_all(array1, array1_size, array2, array2_size); // 10
+    //results_size will result in the size of the array
+    constexpr size_t results_size {array1_size * array2_size};          // 15
 
     cout << "Result: ";
     print(results, results_size);
