@@ -6,6 +6,7 @@
     "configurations": [
         {
             "name": "(gdb) Launch",
+            "preLaunchTask": "g++.exe build active file",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
